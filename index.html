@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Boolzap</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -181,14 +182,27 @@
           </nav>
 
           <div class="contenitore-messaggio">
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+            <div class="to-do">
+              <p></p>
+            </div>
 
+            <div class="chat-utente">
+              <div class="messaggio-verde-utente">
+                <p class="to-do-item"></p>
+              </div>
+            </div>
+            <div class="chat-computer">
+
+            </div>
 
           </div>
+
           <!-- BARRA DELLA CHAT -->
           <div class="barra-chat">
             <span><i class="far fa-smile fa-2x"></i></span>
             <input id="messaggio" type="text" name="" value="" placeholder=" scrivi un messaggio">
-            <span><i class="fab fa-telegram-plane fa-2x"></i></span>
+            <span id="click-messaggio"><i class="fab fa-telegram-plane fa-2x"></i></span>
           </div>
         </div>
       </div>
