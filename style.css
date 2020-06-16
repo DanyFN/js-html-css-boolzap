@@ -175,6 +175,7 @@ img{
   background-color: rgb(235, 235, 221);
 
 }
+
 #messaggio{
   outline: none;
   border: none;
@@ -187,7 +188,6 @@ img{
   cursor: pointer;
 }
 /* CHAT UTENTE */
-
 .contenitore-messaggio{
   background-image: url("img/mine.jpg");
   height: calc(100% - 130px);
@@ -196,12 +196,15 @@ img{
   padding: 40px 90px;
   display: flex;
   justify-content: flex-end;
-
 }
-
+.chat-utente{
+  display: flex;
+  justify-content: flex-start;
+}
 .messaggio-verde-utente{
   height: 50px;
-  width: 140px;
+  /* min-width: 140 */
+  max-width: 300px;
   display: flex;
   background-color: rgb(202, 246, 189);
   justify-content: flex-start;
@@ -209,4 +212,15 @@ img{
   padding-left: 10px;
   border-radius: 20px;
 }
+/* .messaggio-bianco-computer{
+  height: 50px;
+  min-width: 140
+  max-width: 300px;
+  display: flex;
+  background-color: white;
+  padding-left: 10px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: flex-start;
+} */
 /* CHAT COMPUTER */
