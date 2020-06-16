@@ -187,40 +187,40 @@ img{
 #click-messaggio{
   cursor: pointer;
 }
-/* CHAT UTENTE */
+/* CHAT UTENTE / COMPUTER */
 .contenitore-messaggio{
   background-image: url("img/mine.jpg");
   height: calc(100% - 130px);
   border-right: 15px solid white;
   overflow: auto;
   padding: 40px 90px;
-  display: flex;
-  justify-content: flex-end;
+
 }
 .chat-utente{
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
-.messaggio-verde-utente{
+.chat-computer{
+  display: flex;
+  justify-content: flex-start;
+
+
+}
+.messaggio-verde-utente,
+.messaggio-bianco-computer{
   height: 50px;
   /* min-width: 140 */
   max-width: 300px;
   display: flex;
-  background-color: rgb(202, 246, 189);
   justify-content: flex-start;
   align-items: center;
-  padding-left: 10px;
+  padding: 0px 10px;
   border-radius: 20px;
 }
-/* .messaggio-bianco-computer{
-  height: 50px;
-  min-width: 140
-  max-width: 300px;
-  display: flex;
+.messaggio-verde-utente{
+  background-color: rgb(187, 251, 152);
+}
+.messaggio-bianco-computer{
   background-color: white;
-  padding-left: 10px;
-  border-radius: 20px;
-  align-items: center;
-  justify-content: flex-start;
-} */
+}
 /* CHAT COMPUTER */
