@@ -2,14 +2,17 @@ $(document).ready(function () {
 
   $(document).on("click","#click-messaggio",function(){
     invioMessaggioUtente();
+    setTimeout(computerMessaggio, 1000);
   });
 
   $("#input-messaggio").keypress(function(event){
     if (event.which===13 || event.keycode===13) {
       invioMessaggioUtente();
+      setTimeout(computerMessaggio, 1000);
+
     }
   });
-
+  // Funzione di invio messaggio utente
   function invioMessaggioUtente(){
     var chatMessaggio = $("#input-messaggio").val();
     // se la chat non è vuota allora clonami il messaggio
@@ -28,10 +31,26 @@ $(document).ready(function () {
       $(".finestra-chat").append(nuovoMessaggio);
       //reset dell input messaggio
       $("#input-messaggio").val("");
-      $(".finestra-chat").scrollTop($(".finestra-chat").height());
+      $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
     }
   }
 
+  // Funzione di risposta computer dopo 1 secondo
+  function computerMessaggio() {
+    var testoMessaggio = "Ok!";
+    var nuovoMessaggio = $(".template .messaggio").clone();
+    nuovoMessaggio.children(".testo-messaggio").text(testoMessaggio);
+    nuovoMessaggio.addClass("ricevuto");
+    var data = new Date();
+    var oraCorrente = data.getHours();
+    var minutoCorrente = data.getMinutes();
+    var oraEsatta = aggiungiZero(oraCorrente) + ':' + aggiungiZero(minutoCorrente);
+    nuovoMessaggio.children(".ora-messaggio").text(oraEsatta);
+    $(".finestra-chat").append(nuovoMessaggio);
+    $("#input-messaggio").val("");
+    $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
+  }
+  // funzione oraCorrente
   function aggiungiZero(num){
     if (num < 10) {
       return "0" + num;
@@ -39,4 +58,17 @@ $(document).ready(function () {
     return num;
   }
 
+  // ricerca dei contatti
+  $('#cerca').keyup(function(){
+
+    var cercaContatto = $(this).val().toLowerCase();
+    $('.scheda').each(function(){
+      var nomeFiltro = $(this).find('.utente').text().toLowerCase();
+      if (nomeFiltro.includes(cercaContatto)) {
+        $(this).show();
+      }else{
+        $(this).hide();
+      }
+    });
+  });
 });

@@ -150,7 +150,9 @@
 }
 .nome-contatto{
   padding-left: 20px;
-
+}
+.utente{
+  font-weight: bolder;
 }
 /* CONTATTO CARD */
 .contatto-lista, .contatto-chat{
@@ -175,7 +177,6 @@ img{
   background-color: rgb(235, 235, 221);
 
 }
-
 #input-messaggio{
   outline: none;
   border: none;
@@ -199,19 +200,13 @@ img{
   /* background-color: red; */
   width: 100%;
   height: 100%;
-  
 }
-/* .invia-messaggio{
-  width: 100%;
-  background-color: blue;
-  height: 80px;
-} */
 .finestra-chat .messaggio{
-  min-width: 150px;
+  min-width: 100px;
   max-width: 60%;
   display: inline-block;
   margin: 10px 0px;
-  padding: 15px;
+  padding: 15px 20px;
   border-radius: 10px;
   position: relative;
   clear: both;
@@ -226,34 +221,8 @@ img{
 }
 .messaggio .ora-messaggio{
   position: absolute;
-  bottom: 3px;
-  right: 3px;
+  bottom: 2px;
+  right: 5px;
   font-size: 10px;
   color: grey;
-}
-/* .chat-utente{
-  display: flex;
-  justify-content: flex-end;
-}
-.chat-computer{
-  display: flex;
-  justify-content: flex-start;
-}
-.messaggio-verde-utente,
-.messaggio-bianco-computer{
-  height: 50px;
-  max-width: 80%;
-  min-width: 50px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0px 10px;
-  border-radius: 20px;
-
-}
-.messaggio-verde-utente{
-  background-color: rgb(187, 251, 152);
-}
-.messaggio-bianco-computer{
-  background-color: white;
 }
