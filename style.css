@@ -176,7 +176,7 @@ img{
 
 }
 
-#messaggio{
+#input-messaggio{
   outline: none;
   border: none;
   height: 80%;
@@ -194,28 +194,62 @@ img{
   border-right: 15px solid white;
   overflow: auto;
   padding: 40px 90px;
-
 }
-.chat-utente{
+.finestra-chat{
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  
+}
+/* .invia-messaggio{
+  width: 100%;
+  background-color: blue;
+  height: 80px;
+} */
+.finestra-chat .messaggio{
+  min-width: 150px;
+  max-width: 60%;
+  display: inline-block;
+  margin: 10px 0px;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+  clear: both;
+}
+.finestra-chat .messaggio.ricevuto{
+  background-color: white;
+  float: left;
+}
+.finestra-chat .messaggio.inviato{
+  background-color: rgb(187, 251, 152);
+  float: right;
+}
+.messaggio .ora-messaggio{
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  font-size: 10px;
+  color: grey;
+}
+/* .chat-utente{
   display: flex;
   justify-content: flex-end;
 }
 .chat-computer{
   display: flex;
   justify-content: flex-start;
-
-
 }
 .messaggio-verde-utente,
 .messaggio-bianco-computer{
   height: 50px;
-  /* min-width: 140 */
-  max-width: 300px;
+  max-width: 80%;
+  min-width: 50px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 0px 10px;
   border-radius: 20px;
+
 }
 .messaggio-verde-utente{
   background-color: rgb(187, 251, 152);
@@ -223,4 +257,3 @@ img{
 .messaggio-bianco-computer{
   background-color: white;
 }
-/* CHAT COMPUTER */
