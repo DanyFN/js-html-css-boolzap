@@ -33,6 +33,15 @@ $(document).ready(function () {
       //reset dell input messaggio
       $("#input-messaggio").val("");
       $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
+
+      //DROPDOWN
+      $(".messaggio").mouseenter(function(){
+        $(this).children(".dropdown").addClass("active");
+      });
+
+      $(".messaggio").click(function(){
+        $(this).children(".dropdown").removeClass("active");
+      });
     }
   }
 
@@ -50,6 +59,16 @@ $(document).ready(function () {
     $(".finestra-chat.active").append(nuovoMessaggio);
     $("#input-messaggio").val("");
     $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
+
+    //DROPDOWN
+    $(".messaggio").mouseenter(function(){
+      $(this).children(".dropdown").addClass("active");
+    });
+
+    $(".messaggio").click(function(){
+      $(this).children(".dropdown").removeClass("active");
+    });
+
   }
 
   // funzione oraCorrente
@@ -96,9 +115,10 @@ $(document).ready(function () {
     $('.immagine_da_sostituire').attr('src', attributoImmagine);
 
   });
-  //todo dropdown
-  // $(".messaggio").click(function(){
-  //   $(this).children(".dropdown").addClass("active");
-  // })
+
+  // cancello il singolo messaggio
+  $(document).on('click', '#cancella-messaggio', function() {
+  $(this).parents('.messaggio').remove();
+  });
 
 });

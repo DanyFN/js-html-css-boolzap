@@ -239,12 +239,11 @@ img{
 }
 
 /* CLASSE ACTIVE  */
-.active{
-  display: block;
-}
+
 
 /* DROPDOWN */
 .dropdown{
+
   position: absolute;
   text-decoration: none;
   margin: 41px -11px;
@@ -253,7 +252,7 @@ img{
   width: 150px;
   border-radius: 8px;
   display: none;
-
+  z-index: 1;
 }
 
 .dropdown li{
@@ -268,9 +267,11 @@ img{
   display: inline-block;
 
 }
-.dropdown.active{
-  display: flex;
-}
+
 .accesso-nome{
   font-weight: bold;
+}
+
+.active{
+  display: block;
 }
