@@ -28,7 +28,7 @@ $(document).ready(function () {
       var minutoCorrente = data.getMinutes();
       var oraEsatta = aggiungiZero(oraCorrente) + ":" + aggiungiZero(minutoCorrente);
       nuovoMessaggio.children(".ora-messaggio").text(oraEsatta);
-      $(".finestra-chat").append(nuovoMessaggio);
+      $(".finestra-chat.active").append(nuovoMessaggio);
       //reset dell input messaggio
       $("#input-messaggio").val("");
       $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
@@ -46,7 +46,7 @@ $(document).ready(function () {
     var minutoCorrente = data.getMinutes();
     var oraEsatta = aggiungiZero(oraCorrente) + ':' + aggiungiZero(minutoCorrente);
     nuovoMessaggio.children(".ora-messaggio").text(oraEsatta);
-    $(".finestra-chat").append(nuovoMessaggio);
+    $(".finestra-chat.active").append(nuovoMessaggio);
     $("#input-messaggio").val("");
     $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
   }
@@ -71,4 +71,28 @@ $(document).ready(function () {
       }
     });
   });
+  // seleziono la pagina chat corrente
+  $(".scheda").click(function(){
+    var dataScheda = $(this).attr("data-contact");
+    var cloneScheda = $(this).clone(".scheda");
+    console.log(cloneScheda);
+    $(".finestra-chat").removeClass("active");
+    var select = '.finestra-chat[data-chat="'+ dataScheda +'"]';
+    cloneScheda.append(".replica");
+    $(select).addClass("active");
+    var nomeFiltro = $(this).find('.utente').text();
+    $(".accesso-nome").text(nomeFiltro);
+
+    var data = new Date();
+    var oraCorrente = data.getHours();
+    var minutoCorrente = data.getMinutes();
+    var oraEsatta = aggiungiZero(oraCorrente) + ':' + aggiungiZero(minutoCorrente);
+    $(".orarioAggiornato").text(oraEsatta);
+
+  });
+  //todo dropdown
+  $(".messaggio").click(function(){
+    $(this).children(".dropdown").addClass("active");
+  })
+
 });

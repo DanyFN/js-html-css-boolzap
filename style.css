@@ -83,6 +83,12 @@
   background-color: rgb(183, 209, 247);
   /* padding-left: 25px; */
 }
+.fa-bell-slash{
+  padding: 10px;
+  color: rgb(183, 209, 247);
+  border-radius: 50%;
+  background-color: white
+}
 .icona-attiva-notifiche{
   height: 60%;
   width: 30%;
@@ -139,6 +145,7 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid grey;
+  cursor: pointer;
 }
 
 .foto-contatto{
@@ -200,6 +207,8 @@ img{
   /* background-color: red; */
   width: 100%;
   height: 100%;
+  /* diplay none x poi inserire active nella chat che clicchiamo */
+  display: none;
 }
 .finestra-chat .messaggio{
   min-width: 100px;
@@ -225,4 +234,41 @@ img{
   right: 5px;
   font-size: 10px;
   color: grey;
+}
+
+/* CLASSE ACTIVE  */
+.active{
+  display: block;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position: absolute;
+  text-decoration: none;
+  margin: 41px -11px;
+  background-color: white;
+  padding: 12px 4px;
+  width: 150px;
+  border-radius: 8px;
+  display: none;
+
+}
+
+.dropdown li{
+  list-style-type: none;
+  text-align: left;
+  padding-bottom: 8px;
+}
+.dropdown li a{
+  color: black;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+
+}
+.dropdown.active{
+  display: flex;
+}
+.accesso-nome{
+  font-weight: bold;
 }

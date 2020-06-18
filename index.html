@@ -48,7 +48,7 @@
           <!-- RUBRICA -->
 
           <div class="rubrica">
-            <div class="scheda">
+            <div class="scheda" data-contact="0">
               <div class="foto-contatto">
                 <img src="img/avatar_3.jpg" alt="contatto">
               </div>
@@ -58,7 +58,7 @@
               </div>
 
             </div>
-            <div class="scheda">
+            <div class="scheda" data-contact="1">
               <div class="foto-contatto">
                 <img src="img/avatar_4.jpg" alt="contatto">
               </div>
@@ -68,7 +68,7 @@
               </div>
             </div>
 
-            <div class="scheda">
+            <div class="scheda" data-contact="2">
               <div class="foto-contatto">
                 <img src="img/avatar_5.jpg" alt="contatto">
               </div>
@@ -78,17 +78,17 @@
               </div>
             </div>
 
-            <div class="scheda">
+            <div class="scheda" data-contact="3">
               <div class="foto-contatto">
                 <img src="img/avatar_6.jpg" alt="contatto">
               </div>
               <div class="nome-contatto">
-                <p><span class="utente">Cristian</span></p>
+                <p class="utente">Cristian</p>
                 <p>Lorem ipsum dolor sit amet, consectetur</p>
               </div>
             </div>
 
-            <div class="scheda">
+            <div class="scheda" data-contact="4">
               <div class="foto-contatto">
                 <img src="img/avatar_7.jpg" alt="contatto">
               </div>
@@ -98,7 +98,7 @@
               </div>
             </div>
 
-            <div class="scheda">
+            <div class="scheda" data-contact="5">
               <div class="foto-contatto">
                 <img src="img/avatar_8.jpg" alt="contatto">
               </div>
@@ -108,7 +108,7 @@
               </div>
             </div>
 
-            <div class="scheda">
+            <div class="scheda" data-contact="6">
               <div class="foto-contatto">
                 <img src="img/avatar_2.jpg" alt="contatto">
               </div>
@@ -118,7 +118,7 @@
               </div>
             </div>
 
-            <div class="scheda">
+            <div class="scheda" data-contact="7">
               <div class="foto-contatto">
                 <img src="img/avatar_2.jpg" alt="contatto">
               </div>
@@ -128,7 +128,7 @@
               </div>
             </div>
 
-            <div class="scheda">
+            <div class="scheda" data-contact="8">
               <div class="foto-contatto">
                 <img src="img/avatar_1.jpg" alt="contatto">
               </div>
@@ -145,11 +145,11 @@
           <nav class="navbar">
             <!-- CONTENITORE CONTATTO CHAT -->
             <div class="contatto-chat">
-              <img src="img/avatar_2.jpg" alt="contatto">
+              <img class="immagine_da_sostituire" src="img/avatar_2.jpg" alt="contatto">
             </div>
             <div class="nome-accesso">
-              <p> <strong>Daniele Fontana</strong></p>
-              <p>Ultimo accesso oggi alle 10.45</p>
+              <p class="accesso-nome">Daniele Fontana</p>
+              <p class="accesso-ora">Ultimo accesso oggi alle <span class="orarioAggiornato"></span> </p>
             </div>
             <div class="toolbar">
               <p><i class="fas fa-search fa-2x"></i></p>
@@ -160,7 +160,59 @@
             <!-- CONTENITORE MESSAGGI UTENTI -->
           <div class="contenitore-messaggio">
             <!-- singola finestra chat -->
-            <div class="finestra-chat">
+            <div class="finestra-chat active" data-chat="0">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">Ciao?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">Bene,stasera usciamo?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat" data-chat="1">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">Sono in riunione?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">Dove sei?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat" data-chat="2">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">andiamo al concerto?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">che fai stasera?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat" data-chat="3">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">partita di calcio?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">batteria,chitarra?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat" data-chat="4">
           <!-- messaggio ricevuto -->
               <div class="messaggio ricevuto">
                 <span class="testo-messaggio">ciao come stai?</span>
@@ -169,6 +221,71 @@
               <!-- messaggiop inviato -->
               <div class="messaggio inviato">
                 <span class="testo-messaggio">ciao come stai?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat" data-chat="5">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">prey,The witcher?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">hollow knight?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat" data-chat="6">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">metal gear,death stranding</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">fallout?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat" data-chat="7">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">milan,inter,roma?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">juventus?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat" data-chat="8">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">radiohead?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">arcade fire,editors?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+            </div>
+
+            <div class="finestra-chat">
+          <!-- messaggio ricevuto -->
+              <div class="messaggio ricevuto">
+                <span class="testo-messaggio">queen,beatles?</span>
+                <span class="ora-messaggio">12:10</span>
+              </div>
+              <!-- messaggiop inviato -->
+              <div class="messaggio inviato">
+                <span class="testo-messaggio">band?</span>
                 <span class="ora-messaggio">12:10</span>
               </div>
             </div>
@@ -186,6 +303,10 @@
       <!-- TEMPLATE -->
       <div class="template">
         <div class="messaggio">
+          <ul class="dropdown">
+            <li><a href="#">Info Messaggio</a></li>
+            <li id="cancella-messaggio"><a href="#">Cancella Messaggio</a></li>
+          </ul>
           <span class="testo-messaggio"></span>
           <span class="ora-messaggio"></span>
         </div>
