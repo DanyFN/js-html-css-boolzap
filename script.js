@@ -12,6 +12,7 @@ $(document).ready(function () {
 
     }
   });
+
   // Funzione di invio messaggio utente
   function invioMessaggioUtente(){
     var chatMessaggio = $("#input-messaggio").val();
@@ -50,6 +51,7 @@ $(document).ready(function () {
     $("#input-messaggio").val("");
     $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
   }
+
   // funzione oraCorrente
   function aggiungiZero(num){
     if (num < 10) {
@@ -71,6 +73,7 @@ $(document).ready(function () {
       }
     });
   });
+
   // seleziono la pagina chat corrente
   $(".scheda").click(function(){
     var dataScheda = $(this).attr("data-contact");
