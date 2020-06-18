@@ -88,11 +88,14 @@ $(document).ready(function () {
     var minutoCorrente = data.getMinutes();
     var oraEsatta = aggiungiZero(oraCorrente) + ':' + aggiungiZero(minutoCorrente);
     $(".orarioAggiornato").text(oraEsatta);
+    // sostituisco l'immagine di default cn quella cliccata
+    var attributoImmagine = $(this).find('img').attr('src');
+    $('.immagine_da_sostituire').attr('src', attributoImmagine);
 
   });
   //todo dropdown
-  $(".messaggio").click(function(){
-    $(this).children(".dropdown").addClass("active");
-  })
+  // $(".messaggio").click(function(){
+  //   $(this).children(".dropdown").addClass("active");
+  // })
 
 });
