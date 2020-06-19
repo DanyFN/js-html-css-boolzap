@@ -1,5 +1,18 @@
 $(document).ready(function () {
 
+  // DROPDOWN
+
+  $(document).on("click",".freccia",function(){
+    $(this).parent().siblings().find(".dropdown").removeClass("active");
+    $(this).siblings(".dropdown").toggleClass("active");
+  });
+
+// FUNZIONE CANCELLA MESSAGGI
+  $(document).on('click', '#cancella-messaggio', function() {
+  $(this).closest('.messaggio').remove();
+  });
+
+  // FUNZIONE MESSAGGIO DEL COMPUTER
   $(document).on("click","#click-messaggio",function(){
     invioMessaggioUtente();
     setTimeout(computerMessaggio, 1000);
@@ -9,7 +22,6 @@ $(document).ready(function () {
     if (event.which===13 || event.keycode===13) {
       invioMessaggioUtente();
       setTimeout(computerMessaggio, 1000);
-
     }
   });
 
@@ -17,13 +29,14 @@ $(document).ready(function () {
   function invioMessaggioUtente(){
     var chatMessaggio = $("#input-messaggio").val();
     // se la chat non è vuota allora clonami il messaggio
-    if (chatMessaggio != "") {
+    if (chatMessaggio !="") {
       var nuovoMessaggio = $(".template .messaggio").clone();
       // prendo il figlio di messaggio(testo-messaggio) e inserisco
       // il valor dell input messaggio
       nuovoMessaggio.children(".testo-messaggio").text(chatMessaggio);
       //aggiungo la classe inviato
       nuovoMessaggio.addClass("inviato");
+      // variabili per funziene oraesatta
       var data = new Date();
       var oraCorrente = data.getHours();
       var minutoCorrente = data.getMinutes();
@@ -32,16 +45,11 @@ $(document).ready(function () {
       $(".finestra-chat.active").append(nuovoMessaggio);
       //reset dell input messaggio
       $("#input-messaggio").val("");
-      $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
-
-      //DROPDOWN
-      $(".messaggio").mouseenter(function(){
-        $(this).children(".dropdown").addClass("active");
-      });
-
-      $(".messaggio").click(function(){
-        $(this).children(".dropdown").removeClass("active");
-      });
+      // scroll barrra chat
+      $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").prop("scrollHeight"));
+    }else if (chatMessaggio === "") {
+      nuovoMessaggio.children(".testo-messaggio").text();
+      nuovoMessaggio.addClass("inviato");
     }
   }
 
@@ -57,21 +65,13 @@ $(document).ready(function () {
     var oraEsatta = aggiungiZero(oraCorrente) + ':' + aggiungiZero(minutoCorrente);
     nuovoMessaggio.children(".ora-messaggio").text(oraEsatta);
     $(".finestra-chat.active").append(nuovoMessaggio);
+    //reset messaggio
     $("#input-messaggio").val("");
-    $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").height());
-
-    //DROPDOWN
-    $(".messaggio").mouseenter(function(){
-      $(this).children(".dropdown").addClass("active");
-    });
-
-    $(".messaggio").click(function(){
-      $(this).children(".dropdown").removeClass("active");
-    });
-
+    // scroll barrra chat
+    $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").prop("scrollHeight"));
   }
 
-  // funzione oraCorrente
+  // FUNZIONE ORACORRENTE
   function aggiungiZero(num){
     if (num < 10) {
       return "0" + num;
@@ -79,9 +79,9 @@ $(document).ready(function () {
     return num;
   }
 
-  // ricerca dei contatti
-  $('#cerca').keyup(function(){
+  // RICERCA DEI CONTATTI
 
+  $('#cerca').keyup(function(){
     var cercaContatto = $(this).val().toLowerCase();
     $('.scheda').each(function(){
       var nomeFiltro = $(this).find('.utente').text().toLowerCase();
@@ -93,7 +93,8 @@ $(document).ready(function () {
     });
   });
 
-  // seleziono la pagina chat corrente
+  // SELEZIONE PAGINA CHAT CORRENTE
+
   $(".scheda").click(function(){
     var dataScheda = $(this).attr("data-contact");
     var cloneScheda = $(this).clone(".scheda");
@@ -104,7 +105,7 @@ $(document).ready(function () {
     $(select).addClass("active");
     var nomeFiltro = $(this).find('.utente').text();
     $(".accesso-nome").text(nomeFiltro);
-
+    // variabili per funziene oraesatta
     var data = new Date();
     var oraCorrente = data.getHours();
     var minutoCorrente = data.getMinutes();
@@ -115,10 +116,4 @@ $(document).ready(function () {
     $('.immagine_da_sostituire').attr('src', attributoImmagine);
 
   });
-
-  // cancello il singolo messaggio
-  $(document).on('click', '#cancella-messaggio', function() {
-  $(this).parents('.messaggio').remove();
-  });
-
 });

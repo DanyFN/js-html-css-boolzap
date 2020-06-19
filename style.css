@@ -5,7 +5,6 @@
   font-family:monospace;
   font-size: 15px;
 }
-
 /* WRAPPER */
 .wrapper{
   height: 100vh;
@@ -21,7 +20,6 @@
   color: grey;
   font-size: 25px;
 }
-
 /*SFONDO VERDE WRAPPER */
 .sfondo-verde{
   height: 20%;
@@ -37,8 +35,6 @@
   width: 80%;
   margin: auto;
   z-index: 1;
-  /* background-color: red; */
-
 }
 /* COLONNE CONTATTI - CHAT */
 .colonna-contatti{
@@ -51,9 +47,7 @@
   float: right;
   height: 100%;
   width: 70%;
-
 }
-
 .navbar{
   height: 80px;
   width: 100%;
@@ -61,20 +55,18 @@
   display: flex;
   justify-content:flex-start;
   align-items:center;
-  padding-left: 15px; /*padding x la card immagini contatto*/
+  padding-left: 15px;
 }
 .toolbar{
   display: flex;
   margin-left: auto;
 }
-
 .toolbar p{
   padding: 0px 10px;
 }
 .nome-accesso{
   padding-left: 20px;
 }
-
 /* NOTIFICA AZZURRA */
 .attiva-notifiche{
   height: 100px;
@@ -83,7 +75,6 @@
   justify-content:center;
   align-items:center;
   background-color: rgb(183, 209, 247);
-  /* padding-left: 25px; */
 }
 .fa-bell-slash{
   padding: 10px;
@@ -104,18 +95,17 @@
   align-items:center;
   height: 60%;
   width: 70%;
+  margin-right: 60px;
 }
 .lista-attiva-notifiche ul li{
   padding-top: 5px;
   list-style-type: none;
   text-align: center;
 }
-
 #underline-notifiche{
   text-decoration: underline;
   color: grey;
 }
-
 /* CERCA CONTATTO */
 .cerca-contatto{
   height: 50px;
@@ -133,14 +123,11 @@
   border-radius: 5px;
   text-decoration: none;
 }
-
 /* RUBRICA */
 .rubrica{
   height: calc(100% - 230px);
-  /* background-color: red; */
   overflow: auto;
 }
-
 .scheda{
   height: 80px;
   width: 100%;
@@ -149,7 +136,6 @@
   border-bottom: 1px solid grey;
   cursor: pointer;
 }
-
 .foto-contatto{
   height: 80%;
   width: 20%;
@@ -168,15 +154,12 @@
   height: 80%;
 }
 
-/* todo ==> clear fix */
-
 /* REGOLE GENERALI IMG */
 img{
   height: 100%;
   border-radius: 50%;
 }
 /* BARRA-MESSAGGIO */
-
 .barra-chat{
   height: 50px;
   width: 100%;
@@ -184,7 +167,6 @@ img{
   justify-content: space-around;
   align-items: center;
   background-color: rgb(235, 235, 221);
-
 }
 #input-messaggio{
   outline: none;
@@ -206,10 +188,8 @@ img{
   padding: 40px 90px;
 }
 .finestra-chat{
-  /* background-color: red; */
   width: 100%;
   height: 100%;
-  /* diplay none x poi inserire active nella chat che clicchiamo */
   display: none;
 }
 .finestra-chat .messaggio{
@@ -237,13 +217,22 @@ img{
   font-size: 10px;
   color: grey;
 }
-
-/* CLASSE ACTIVE  */
-
-
+.freccia{
+  display: none;
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  color: #b1b1b1;
+  cursor: pointer;
+}
+.messaggio:hover .freccia{
+  display: block;
+}
+.freccia i{
+  font-size: 12px;
+}
 /* DROPDOWN */
 .dropdown{
-
   position: absolute;
   text-decoration: none;
   margin: 41px -11px;
@@ -254,7 +243,6 @@ img{
   display: none;
   z-index: 1;
 }
-
 .dropdown li{
   list-style-type: none;
   text-align: left;
@@ -265,13 +253,11 @@ img{
   font-size: 14px;
   text-decoration: none;
   display: inline-block;
-
 }
-
 .accesso-nome{
   font-weight: bold;
 }
-
+  /* CLASSE ACTIVE */
 .active{
   display: block;
 }
