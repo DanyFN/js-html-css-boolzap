@@ -7,19 +7,12 @@ $(document).ready(function () {
     $(this).siblings(".dropdown").toggleClass("active");
   });
 
-// FUNZIONE CANCELLA MESSAGGI
-  $(document).on('click', '#cancella-messaggio', function() {
-  $(this).closest('.messaggio').remove();
-  });
-
   // FUNZIONE MESSAGGIO DEL COMPUTER
   $(document).on("click","#click-messaggio",function(){
     invioMessaggioUtente();
     $(".accesso-ora").text("Sto scrivendo...");
     setTimeout(computerMessaggio, 2200);
     setTimeout(spuntablue, 3800);
-
-
   });
 
   $("#input-messaggio").keypress(function(event){
@@ -82,7 +75,7 @@ $(document).ready(function () {
     // scroll barrra chat
     $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").prop("scrollHeight"));
     $(".accesso-ora").text("Ultimo accesso oggi alle ore: " + oraEsatta);
-    $(".ricevuto i").hide();
+    $(".ricevuto .check_message i").hide();
   }
 
 
@@ -131,4 +124,9 @@ $(document).ready(function () {
     $('.immagine_da_sostituire').attr('src', attributoImmagine);
 
   });
+
+  // FUNZIONE CANCELLA MESSAGGI
+    $(document).on('click', '#cancella-messaggio', function() {
+    $(this).closest('.messaggio').remove();
+    });
 });
