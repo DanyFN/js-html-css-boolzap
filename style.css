@@ -5,6 +5,10 @@
   font-family:monospace;
   font-size: 15px;
 }
+
+.template{
+  display: none;
+}
 /* WRAPPER */
 .wrapper{
   height: 100vh;
@@ -213,7 +217,7 @@ img{
 .messaggio .ora-messaggio{
   position: absolute;
   bottom: 2px;
-  right: 5px;
+  right: 35px;
   font-size: 10px;
   color: grey;
 }
@@ -225,6 +229,25 @@ img{
   color: #b1b1b1;
   cursor: pointer;
 }
+/* CHECK */
+.pr{
+  padding-right: 5px;
+}
+.check_message{
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 2px;
+}
+.check_message i {
+  font-size: 12px;
+  margin: 0;
+}
+
+.spunta{
+  color: rgb(26, 139, 222);
+}
+/* FINE CHECK */
 .messaggio:hover .freccia{
   display: block;
 }

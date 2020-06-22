@@ -15,13 +15,20 @@ $(document).ready(function () {
   // FUNZIONE MESSAGGIO DEL COMPUTER
   $(document).on("click","#click-messaggio",function(){
     invioMessaggioUtente();
-    setTimeout(computerMessaggio, 1000);
+    $(".accesso-ora").text("Sto scrivendo...");
+    setTimeout(computerMessaggio, 2200);
+    setTimeout(spuntablue, 3800);
+
+
   });
 
   $("#input-messaggio").keypress(function(event){
     if (event.which===13 || event.keycode===13) {
       invioMessaggioUtente();
-      setTimeout(computerMessaggio, 1000);
+      $(".accesso-ora").text("Sto scrivendo...");
+      setTimeout(computerMessaggio, 2200);
+      setTimeout(spuntablue, 3800);
+
     }
   });
 
@@ -51,6 +58,11 @@ $(document).ready(function () {
       nuovoMessaggio.children(".testo-messaggio").text();
       nuovoMessaggio.addClass("inviato");
     }
+
+  }
+
+  function spuntablue() {
+  $('.check_message i').addClass("spunta");
   }
 
   // Funzione di risposta computer dopo 1 secondo
@@ -69,7 +81,10 @@ $(document).ready(function () {
     $("#input-messaggio").val("");
     // scroll barrra chat
     $(".contenitore-messaggio").scrollTop($(".contenitore-messaggio").prop("scrollHeight"));
+    $(".accesso-ora").text("Ultimo accesso oggi alle ore: " + oraEsatta);
+    $(".ricevuto i").hide();
   }
+
 
   // FUNZIONE ORACORRENTE
   function aggiungiZero(num){
